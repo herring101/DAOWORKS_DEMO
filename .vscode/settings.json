@@ -1,0 +1,10 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none",
+  "python.analysis.extraPaths": [
+    "C:\\Users\\Maeda\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\",
+    "./src/daoworks_demo"
+  ]
+}
