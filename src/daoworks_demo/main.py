@@ -5,6 +5,7 @@ from task import Task, TodoList
 
 class TodoApp:
     def __init__(self, root):
+        # initialize widgets
         self.todo_list = TodoList()
         self.root = root
         self.task_listbox = tk.Listbox(root)
@@ -12,13 +13,13 @@ class TodoApp:
         self.add_button = tk.Button(root, text="タスク追加", command=self.add_task)
         self.remove_button = tk.Button(root, text="タスク削除", command=self.remove_task)
 
-        # ウィジェットの配置
+        # place widgets
         self.task_listbox.pack()
         self.task_entry.pack()
         self.add_button.pack()
         self.remove_button.pack()
 
-        # ダブルクリックでタスクのステータスを切り替える
+        # bind events
         self.task_listbox.bind("<Double-Button-1>", self.toggle_task_status)
 
     def add_task(self):
@@ -36,7 +37,7 @@ class TodoApp:
         self.todo_list.remove_task(selected_task)
         self.update_task_listbox()
 
-    def toggle_task_status(self, event):  # event引数を追加
+    def toggle_task_status(self, event):
         selected_task = self.task_listbox.get(self.task_listbox.curselection())
         selected_task = self.displayname_to_taskname(selected_task)
         self.todo_list.toggle_task_status(selected_task)
