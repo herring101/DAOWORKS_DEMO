@@ -1,6 +1,7 @@
 # daoworks-demo
 
 DAOWORKSの動作確認のためのリポジトリです。
+DAOWORKSの機能を使い、自動で Pull Request の評価を行います。
 
 このレポジトリでは簡単なTODOアプリの開発をシミュレーションしています。
 
@@ -20,10 +21,21 @@ DAOWORKSの動作確認のためのリポジトリです。
 
 ## 実行方法
 
-windowsの場合
+このプロジェクトでは、rye というパッケージ管理ツールを使用しています。
+インストール方法は [ここ](https://rye-up.com/guide/installation/#installing-rye) を参照してください。
+
+windows での実行方法は以下の通りです。
 
 ```pwsh
-git clone
-cd daoworks_demo
-.\.venv\Scripts\python.exe .\src\daoworks_demo\main.py
+rye sync
+.venv\Scripts\activate
+python .\src\daoworks_demo\main.py
+```
+
+Unix 系 OS での実行方法は以下の通りです。
+
+```sh
+rye sync
+. .venv/bin/activate
+python ./src/daoworks_demo/main.py
 ```
