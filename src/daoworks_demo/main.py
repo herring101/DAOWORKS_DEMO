@@ -32,6 +32,7 @@ class TodoApp:
 
     def remove_task(self):
         selected_task = self.task_listbox.get(self.task_listbox.curselection())
+        selected_task = self.displayname_to_taskname(selected_task)
         self.todo_list.remove_task(selected_task)
         self.update_task_listbox()
 
