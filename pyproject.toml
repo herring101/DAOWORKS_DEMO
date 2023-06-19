@@ -5,7 +5,7 @@ description = "Add a short description here"
 authors = [
     { name = "herring101", email = "herring101@outlook.jp" }
 ]
-dependencies = []
+dependencies = ["Pillow~=9.5.0"]
 readme = "README.md"
 requires-python = ">= 3.8"
 
