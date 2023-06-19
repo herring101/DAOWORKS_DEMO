@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, PhotoImage
+from PIL import Image
 from task import Task, TodoList
 
 
@@ -8,6 +9,13 @@ class TodoApp:
         # initialize widgets
         self.todo_list = TodoList()
         self.root = root
+
+        # set background image
+        self.background_image = PhotoImage(file="images/daoworks.png")
+        self.background_label = tk.Label(root, image=self.background_image)
+        self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+        # set widgets
         self.task_listbox = tk.Listbox(root)
         self.task_entry = tk.Entry(root)
         self.add_button = tk.Button(root, text="タスク追加", command=self.add_task)
@@ -57,5 +65,10 @@ class TodoApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
+
+    img = Image.open("images/daoworks.png")
+    width, height = img.size
+    root.geometry(f"{width}x{height}")
+
     todo_app = TodoApp(root)
     root.mainloop()
